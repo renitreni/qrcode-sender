@@ -9,7 +9,7 @@ class QrCodeGenerate
     public static function execute()
     {
         $path = time().'.png';
-        QrCode::format('png')->size(100)->generate(request()->url(), $path);
+        QrCode::format('png')->size(100)->generate(config('app.url'), $path);
 
         return $path;
     }
